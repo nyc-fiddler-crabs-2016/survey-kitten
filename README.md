@@ -82,9 +82,7 @@ create some fun dynamic forms.  Check these out:
 * Google "jquery dynamic form fields" to find more
 
 
-To start and for your own sanity, maybe limit each survey to a single question.
-Create a version with a single question per survey working first and add
-support for multiple questions later.
+You might tighten your feedback loop by limiting each survey to a single question at the start of your work. You can add support for multiple questions once the most basic version of the feature runs well.
 
 Surveys should also have an optional image associated with them.
 [CarrierWave][CarrierWave] is your friend; you'll come to love it with time.
