@@ -4,9 +4,17 @@ class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true
   validates :password, presence: true
-  has_many :selections
-  has_many :created_surveys, class_name: "Survey", foreign_key: :creator_id
-  has_many :taken_surveys, through: :selections, source: :survey, foreign_key: :taker_id
 
-  include BCrypt
+  has_many :created_surveys, class_name: "Survey", foreign_key: "creator_id"
+  has_many :selections, foreign_key: "taker_id"
+
+  has_many :taken_surveys, through: :selections, source: :survey
+
 end
+
+
+
+
+ # has_many :created_surveys
+  #
+  # has_many :created_surveys, class_nameforeign_key: "creator_id"
