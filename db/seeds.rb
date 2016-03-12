@@ -23,4 +23,5 @@ s2.questions.last.choices.create(choice_text:"idk")
 s2.questions.last.choices.create(choice_text:"you suck")
 
 Selection.create(taker_id: 2, question_id: 1, choice_id: 1, survey_id: 1)
+Selection.create(taker_id: 2, question_id: 2, choice_id: 1, survey_id: 1)
 

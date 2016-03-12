@@ -11,10 +11,3 @@ class User < ActiveRecord::Base
   has_many :taken_surveys, through: :selections, source: :survey
 
 end
-
-
-
-
- # has_many :created_surveys
-  #
-  # has_many :created_surveys, class_nameforeign_key: "creator_id"
