@@ -19,4 +19,12 @@ class Survey < ActiveRecord::Base
    sliced_array
  end
 
+#   def self.create_selections(params_hash)
+#     choices = params_hash[:choices]
+#     choices.each do |key, value|
+#     choice = Choice.find(value.to_i)
+#     selection = Selection.new(choice_id: choice.id, taker: current_user, question_id: choice.question.id,  survey_id: choice.question.survey.id)
+#   end
+# end
+
 end

@@ -28,8 +28,3 @@ get '/surveys/:id' do
   erb :'/surveys/show'
 end
 
-
-get '/surveys/:id/take' do
-  @survey = Survey.find(params[:id])
-  erb :'/surveys/take'
-end

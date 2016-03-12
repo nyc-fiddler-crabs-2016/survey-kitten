@@ -1,8 +1,13 @@
 <%=@survey.name%>
 
-<%@survey.questions.each do |question|%>
+<%@survey.questions.each_with_index do |question, question_index|%>
   <h3><%=question.question_text%></h3>
-    <%question.choices.each_with_index do |choice, index|%>
-      <h4><%= index +1 %><%=choice.choice_text%></h4>
+
+   <form class="taken-survey-question" action="/selections" method='post'>
+
+    <%question.choices.each do |choice|%>
+      <h4><input type="radio" name="choices[<%=question_index + 1%>]" value="<%=choice.id %>"> <%=choice.choice_text%>
   <%end%>
   <%end%>
+  <input type="submit" value="Submit Survey">
+</form>
