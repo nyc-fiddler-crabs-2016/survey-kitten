@@ -1,4 +1,30 @@
 
 <div class = 'container'>
   <p>Hello there, <%=@user.username %></p>  
+
+
+<p>
+ 	<%@user.taken_surveys.uniq.each do |survey|%>
+ 			Survey: <%=survey.name%>
+ 			<br>
+ 			Creator: <%=survey.creator.username%>
+ 			<br> <br>
+ 			<%survey.selections.each do |selection|%>
+ 				 Question:<%=selection.question.question_text%>
+ 				<br>
+ 				You Selected: <%=selection.choice.choice_text%>
+ 				<br> <br>
+
+ 			 <%end%>
+
+ 			<br><br>
+
+ 		
+ 	<%end%>
+
+
+
+
+</p>	
+
 </div>
