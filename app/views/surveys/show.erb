@@ -1,13 +1,12 @@
 <%=@survey.name%>
-
 <%@survey.questions.each_with_index do |question, question_index|%>
   <h3><%=question.question_text%></h3>
 
-   <form class="taken-survey-question" action="/selections" method='post'>
+  <form class="taken-survey-question" action="/selections" method='post'>
 
-    <%question.choices.each do |choice|%>
-      <h4><input type="radio" name="choices[<%=question_index + 1%>]" value="<%=choice.id %>"> <%=choice.choice_text%>
+  <%question.choices.each do |choice|%>
+    <h4><input type="radio" name="choices[<%=question_index + 1%>]" value="<%=choice.id %>"> <%=choice.choice_text%>
   <%end%>
-  <%end%>
-  <input type="submit" value="Submit Survey">
+<%end%>
+<input type="submit" value="Submit Survey">
 </form>

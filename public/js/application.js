@@ -6,7 +6,7 @@ $(document).ready(function() {
     var displayCount = varCount+1;
     $node += '<p><label for="choice_text['+displayCount+']">Choice'+displayCount+': </label><input type="text" name="choice_text['+displayCount+']" id="choice_text'+displayCount+'"><span class="removeVar">Remove Choice</span></p>';
   }
-  $('#new-question-form').prepend($node);
+  $('#new-question-form').append($node);
 
   $('#new-question-form').on('click', '.removeVar', function(){
     $(this).parent().remove();
@@ -29,9 +29,9 @@ $(document).ready(function() {
       url:'/surveys',
       data: $(this).serialize(),
     }).done(function(response){
+
       $('#new-question-form-container').show();
     });
-
 
 });
 
