@@ -2,8 +2,9 @@ class Survey < ActiveRecord::Base
   # Remember to create a migration!
   belongs_to :creator, class_name: "User"
   has_many :questions, dependent: :destroy
+  has_many :choices, through: :questions
   has_many :selections
-  has_many :takers, through: :selections, source: :user
+  has_many :takers, through: :selections, source: :taker
 
  # def build_survey_questions(params_hash)
  #    question_count = params_hash.count
