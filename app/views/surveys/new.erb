@@ -1,0 +1,22 @@
+<div id="new-survey-form-container">
+  <form id="new-survey-form" method="POST" action="/surveys">
+    <label>Survey Name:</label>
+    <input type="text" name= "name">
+    <label>Survey Category:</label>
+    <input type="text" name= "category">
+    <input type="submit" value= "Create Survey">
+  </form>
+</div>
+
+<div id="new-question-form-container">
+  <form id="new-question-form" method="POST" action="/questions">
+    <label>Question</label>
+    <textarea name="question[question_text]"></textarea>
+    <p>
+      <span id="addVar">Add Variable</span>
+    </p>
+    <input type="submit" value= "Submit Question">
+  </form>
+  <a href="/surveys">Submit Survey (Only submit after you have submitted your last question.)</a>
+</div>
+
