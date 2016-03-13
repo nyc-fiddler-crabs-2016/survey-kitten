@@ -3,6 +3,7 @@ class Question < ActiveRecord::Base
   has_many :choices, dependent: :destroy
   has_many :selections
   belongs_to :survey
+  has_one :creator, through: :survey
 
   def build_choices(params_hash, question)
     choices = params_hash[:choice_text]
