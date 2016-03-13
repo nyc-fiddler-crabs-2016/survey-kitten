@@ -1,3 +1,34 @@
 #new-question-form-container {
   display: none;
 }
+#submit-survey-container{
+  border-top: 1px black solid;
+  padding-top: 1rem;
+  display: none;
+  width: 66%;
+
+}
+#complete-survey-button input{
+  width: 100%;
+  padding: 1rem;
+  font-size: 2rem:;
+  background-color: #bfbfbf;
+}
+
+#submit-question-button{
+  width: 66%;
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: #676b6f;
+}
+#addVar, .removeVar{
+  width: 10%;
+  margin: 15px;
+  background-color: #bfbfbf;
+  border: 1px black solid;
+}
+#addVar p{
+  margin: 20px;
+}
+
+

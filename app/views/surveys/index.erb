@@ -1,7 +1,11 @@
 <ul>
   <%@surveys.each do |survey|%>
-    <li><a href="/surveys/<%=survey.id%>"><%=survey.name%></a></li>
-  <%end%>
+    <% if survey.questions.empty? %>
+      <%survey.destroy%>
+    <% else %>
+      <li><a href="/surveys/<%=survey.id%>"><%=survey.name%></a></li>
+    <% end %>
+  <% end %>
 </ul>
 
 
