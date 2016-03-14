@@ -1,3 +1,4 @@
+require 'pry'
 get '/surveys' do
   @surveys = Survey.all
   erb :'/surveys/index'
@@ -12,9 +13,13 @@ get '/surveys/new' do
 end
 
 post '/surveys' do
-  @survey = Survey.create(name: params[:name], category: params[:category], creator_id: current_user.id)
+  @survey = Survey.new(params[:survey])
+  @survey.creator_id = current_user.id
+  @survey.save
+
   session[:survey_id] = @survey.id
-  "hey"
+
+  redirect "/"
 end
 
 get '/surveys/:id' do
@@ -24,7 +29,7 @@ end
 
 delete '/surveys/:id' do
 Survey.find(params[:id]).destroy
-  redirect '/users/#{current_user.id}'
+  redirect "/users/#{current_user.id}"
 end
 
 
