@@ -1,6 +1,29 @@
 
 <div class = 'container'>
-  <p>Hello there, <%=@user.username %></p>  
+  <p>Hello there, <%=@user.username %></p>
+  <%if current_user == @user%>
+    <%if @user.created_surveys.length == 0%>
+    <p>You have not made any surveys</p>
+    <%else%>
+
+  <p> Here are the surveys you have created</p>
+
+  <%@user.created_surveys.each do |survey|%>
+      <ul><li>Survey: <%=survey.name%></li>
+        <li><%=survey.takers.length%> people have taken your surveys</li>
+        <li> <%if current_user == survey.creator%>
+            <form method="POST" action="/surveys/<%=survey.id%>">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Delete this survey" class="button">
+          </form><%end%></li>
+
+      </ul>
+
+       <%end%>
+       <%end%>
+       <%end%>
+
+      <br><br>
 
 
 <p>
@@ -19,12 +42,12 @@
 
  			<br><br>
 
- 		
+
  	<%end%>
 
 
 
 
-</p>	
+</p>
 
 </div>
