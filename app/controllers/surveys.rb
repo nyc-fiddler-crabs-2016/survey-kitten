@@ -22,3 +22,9 @@ get '/surveys/:id' do
   erb :'/surveys/show'
 end
 
+delete '/surveys/:id' do
+Survey.find(params[:id]).destroy
+  redirect '/users/#{current_user.id}'
+end
+
+
